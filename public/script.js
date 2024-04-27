@@ -73,10 +73,12 @@ async function State() {
       jsonInput.value = '';
       showResult('Invalid JSON data. Please check your input.');
     }
+    measurePing(); // Trigger ping measurement after showing the result
   } catch (parseError) {
     jsonInput.value = '';
     console.error('Error parsing JSON:', parseError);
     showResult('Error parsing JSON. Please check your input.');
+    measurePing(); // Trigger ping measurement after showing the result
   } finally {
     setTimeout(() => {
       button.style.display = 'block';
@@ -213,4 +215,22 @@ function selectAllEvents() {
         checkbox.checked = false;
         const labelText = checkbox.nextElementSibling;
         labelText.classList.remove('disable');
-        const event = labelText.textContent.replace(/^\d+\.\s/, '').split(" ")[
+        const event = labelText.textContent.replace(/^\d+\.\s/, '').split(" ")[0];
+        const removeEvent = array.indexOf(event);
+        if (removeEvent !== -1) {
+          array.splice(removeEvent, 1);
+        }
+      } else {
+        checkbox.checked = true;
+        const labelText = checkbox.nextElementSibling;
+        labelText.classList.add('disable');
+        const event = labelText.textContent.replace(/^\d+\.\s/, '').split(" ")[0];
+        if (!array.includes(event)) {
+          array.push(event);
+        }
+      }
+    });
+  });
+}
+
+commandList();
