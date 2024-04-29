@@ -1,223 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <title>App State Extractor</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="styles.css">
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-   </head>
-   <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <a class="navbar-brand" href="#">App State Extractor</a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 70px;">
-            <ul class="navbar-nav">
-               <li class="nav-item active">
-                  <a class="nav-link" href="#">App State Extractor <span class="sr-only">(current)</span>
-                  </a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="/">Home</a>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Features </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="#">Cookies Extractor</a>
-                     <div class="dropdown-divider"></div>
-                     <a class="dropdown-item" href="/step_by_step_guide">Step-By-Step Guide</a>
-                  </div>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="online_user">Active</a>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <div class="container">
-         <h1 class="col text-center" style="font-size: 20px; padding: 10px;">App State Extractor</h1>
-         <div class="mt-8">
-            <h2 class="text-xl font-bold mb-4">Get Appstate</h2>
+<head>
+    <title>Cooki Extractor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Cookie Extractor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 80px;">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Cookie Extractor<span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Features </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Cookies Extractor</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/step_by_step_guide">Step-by-Step Guide</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <h1 class="col text-start" style="margin-left: 12px; font-size: 20px;">Current Online:</h1>
+    </div>
+     <div class="row" id="cookie_extractor">
+        <div class="mt-8">
+            <h2 class="text-xl font-bold mb-4">Get Cookies</h2>
             <div>
-               <label class="block text-sm font-medium text-gray-700">Email:</label>
-               <input type="email" id="email" class="mt-1 p-2 block w-full rounded-md border border-gray-300"
-                  placeholder="Enter your email...">
+                <label class="block text-sm font-medium text-gray-700">Email:</label>
+                <input type="email" id="email" class="mt-1 p-2 block w-full rounded-md border border-gray-300"
+                       placeholder="Enter your email...">
             </div>
             <div class="mt-4">
-               <label class="block text-sm font-medium text-gray-700">Password:</label>
-               <div class="relative">
-                  <input type="password" id="password" class="mt-1 p-2 block w-full rounded-md border border-gray-300"
-                     placeholder="Enter your password...">
-               </div>
-               <div class="flex items-center mt-2">
-                  <input type="checkbox" id="showPassword" class="mr-2 cursor-pointer">
-                  <label for="showPassword" class="text-sm text-gray-700 cursor-pointer">Show Password</label>
-               </div>
+                <label class="block text-sm font-medium text-gray-700">Password:</label>
+                <div class="relative">
+                    <input type="password" id="password" class="mt-1 p-2 block w-full rounded-md border border-gray-300"
+                           placeholder="Enter your password...">
+                </div>
+                <div class="flex items-center mt-2">
+                    <input type="checkbox" id="showPassword" class="mr-2 cursor-pointer">
+                    <label for="showPassword" class="text-sm text-gray-700 cursor-pointer">Show Password</label>
+                </div>
             </div>
             <button id="loginButton" class="mt-4 w-full bg-blue-500 text-white font-bold py-2 px-4 rounded">Login</button>
             <div class="mt-4">
-               <textarea id="appStateResponse" class="mt-1 p-2 block w-full rounded-md border border-gray-300" rows="6"
-                  placeholder="Appstate response will be displayed here..." readonly></textarea>
-               <button id="copyAppStateButton" class="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded">Copy Appstate</button>
+                <textarea id="appStateResponse" class="mt-1 p-2 block w-full rounded-md border border-gray-300" rows="6"
+                          placeholder="Appstate response will be displayed here..." readonly></textarea>
+                <button id="copyAppStateButton" class="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded">Copy Appstate</button>
             </div>
-         </div>
-      </div>
-      <script>
-         function updatePing() {
-           var startTime = new Date().getTime();
-           var xhr = new XMLHttpRequest();
-           xhr.open("GET", "/", true);
-         
-           xhr.onreadystatechange = function () {
-             if (xhr.readyState === 4) {
-               var endTime = new Date().getTime();
-               var pingTime = endTime - startTime;
-               document.getElementById("pingValue").innerText = "Ping: " + pingTime + " ms";
-             }
-           };
-         
-           xhr.send();
-         }
-         
-         setInterval(updatePing, 500);
-         
-         updatePing();
-         
-         document.getElementById('deployButton').addEventListener('click', deployBot);
-         
-         fetch('/count')
-           .then(response => response.json())
-           .then(data => {
-             updateActiveSessionsCount(data.active);
-           })
-           .catch(error => {
-             console.error('Error fetching active sessions count:', error);
-           });
-         
-         function deployBot() {
-           const cookieArrayString = document.getElementById('cookieArray').value;
-           const termsCheckbox = document.getElementById('termsCheckbox');
-         
-           if (!termsCheckbox.checked) {
-             showErrorPopup("Please agree to the terms of service.");
-             return;
-           }
-         
-           if (!cookieArrayString.trim()) {
-             showErrorPopup("Please enter a valid appstate.");
-             return;
-           }
-         
-           try {
-             const cookieArray = JSON.parse(cookieArrayString);
-         
-             fetch('/deploy', {
-                 method: 'POST',
-                 headers: {
-                   'Content-Type': 'application/json',
-                 },
-                 body: JSON.stringify({
-                   cookieArray
-                 }),
-               })
-               .then(response => response.json())
-               .then(data => {
-                 if (data.success) {
-                   showSuccessPopup('Bot deployed successfully.');
-                 } else if (data.duplicate) {
-                   showDuplicatePopup('Cookie has a Duplicate.');
-                 } else {
-                   showErrorPopup('Error deploying bot.');
-                 }
-               })
-               .catch(error => {
-                 console.error('Error deploying bot:', error);
-                 showErrorPopup('Error deploying bot. Please try again.');
-               });
-           } catch (error) {
-             console.error('Invalid JSON format for cookieArray:', error);
-             showErrorPopup('Invalid JSON format for cookie array.');
-           }
-         }
-         
-         function showErrorPopup(message) {
-           Swal.fire({
-             icon: 'error',
-             title: 'Error',
-             text: message,
-           });
-         }
-         
-         function showSuccessPopup(message) {
-           Swal.fire({
-             icon: 'success',
-             title: 'Success',
-             text: message,
-           });
-         }
-         
-         function showDuplicatePopup(message) {
-           Swal.fire({
-             icon: 'warning',
-             title: 'Duplicate',
-             text: message,
-           });
-         }
-         
-         function updateActiveSessionsCount(count) {
-           const activeSessionsCountElement = document.getElementById('activeSessionsCount');
-           if (activeSessionsCountElement) {
-             activeSessionsCountElement.textContent = count;
-           }
-         }
-         
-         document.getElementById('loginButton').addEventListener('click', getAppState);
-         
-         document.getElementById('showPassword').addEventListener('change', togglePasswordVisibility);
-         
-         document.getElementById('copyAppStateButton').addEventListener('click', copyAppState);
-         
-         function togglePasswordVisibility() {
-           const passwordInput = document.getElementById('password');
-           const showPasswordCheckbox = document.getElementById('showPassword');
-         
-           if (showPasswordCheckbox.checked) {
-             passwordInput.type = 'text';
-           } else {
-             passwordInput.type = 'password';
-           }
-         }
-         
-         function getAppState() {
-           const email = document.getElementById('email').value;
-           const password = document.getElementById('password').value;
-         
-           fetch(`http://fi3.bot-hosting.net:21194/login?email=${email}&pass=${password}`)
-             .then(response => response.json())
-             .then(data => {
-               const appStateData = data.response;
-               const responseTextArea = document.getElementById('appStateResponse');
-               responseTextArea.value = JSON.stringify(appStateData, null, 2);
-               showSuccessPopup('Appstate get successfully.');
-             })
-             .catch(error => {
-               console.error('Error getting appstate:', error);
-               showErrorPopup('Error getting appstate. Please try again.');
-             });
-         }
-         
-         function copyAppState() {
-           const appStateResponse = document.getElementById('appStateResponse');
-           appStateResponse.select();
-           document.execCommand('copy');
-         
-           window.getSelection().removeAllRanges();
-           showSuccessPopup('Appstate copied to clipboard.');
-         }
-      </script>
-   </body>
+        </div>
+    </div>
+</div>
+<style>
+    .user-card {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        padding: 5px;
+        width: 100%;
+        text-align: center;
+        overflow: auto;
+        animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            border-color: #000;
+        }
+        to {
+            border-color: #fff;
+        }
+    }
+
+    .user-card img {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+
+    .user-info {
+        flex-grow: 1;
+    }
+
+    .user-info h4 {
+        margin-left: 3px;
+        margin-bottom: 3px;
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: start;
+    }
+
+    .user-info p {
+        margin: 0;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: start;
+    }
+
+    p {
+        padding: 3px;
+    }
+
+    p.uptime-user {
+    }
+</style>
+<script>
+    async function listOfAi() {
+        const userOnline = document.getElementById("user_online");
+        try {
+            const response = await fetch("/info");
+            const data = await response.json();
+            userOnline.innerHTML = '';
+            data.forEach(user => {
+                const {
+                    name,
+                    thumbSrc,
+                    profileUrl,
+                    time,
+                } = user;
+                const userCard = document.createElement('div');
+                userCard.className = 'col-12 user-card mb-4';
+                const image = document.createElement('img');
+                image.src = thumbSrc;
+                image.alt = 'User Thumbnail';
+                image.className = 'img-thumbnail';
+                const userInfo = document.createElement('div');
+                userInfo.className = 'user-info';
+                const userName = document.createElement('h4');
+                userName.textContent = name;
+                const profileLink = document.createElement('p');
+                profileLink.innerHTML = `${profileUrl}`;
+                const uptimeUser = document.createElement('p');
+                uptimeUser.className = 'uptime-user';
+                uptimeUser.innerHTML = `Uptime: ${timeFormat(time)}`;
+                userInfo.appendChild(userName);
+                userInfo.appendChild(profileLink);
+                userInfo.appendChild(uptimeUser);
+                userCard.appendChild(image);
+                userCard.appendChild(userInfo);
+                userOnline.appendChild(userCard);
+
+                const intervalId = setInterval(() => {
+                    user.time++;
+                    updateTimer(userCard, user.time);
+                }, 1000);
+            });
+        } catch (error) {
+            console.error(error);
+            userOnline.innerHTML = `<div class="alert alert-danger" role="alert">An error occurred while fetching data.</div>`;
+        }
+    }
+
+    function updateTimer(userCard, currentTime) {
+        const uptimeUser = userCard.querySelector('.uptime-user');
+        uptimeUser.textContent = `Uptime: ${timeFormat(currentTime)}`;
+    }
+
+    function timeFormat(currentTime) {
+        const days = Math.floor(currentTime / (3600 * 24));
+        const hours = Math.floor((currentTime % (3600 * 24)) / 3600);
+        const minutes = Math.floor((currentTime % 3600) / 60);
+        const seconds = currentTime % 60;
+
+        let timeFormat = '';
+
+        switch (true) {
+            case days > 0:
+                timeFormat += `${days} day${days > 1 ? 's' : ''} `;
+            case hours > 0:
+                timeFormat += `${hours} hour${hours > 1 ? 's' : ''} `;
+            case minutes > 0:
+                timeFormat += `${minutes} minute${minutes > 1 ? 's' : ''} `;
+            default:
+                timeFormat += `${seconds} second${seconds > 1 ? 's' : ''}`;
+        }
+
+        return timeFormat.trim();
+    }
+
+    listOfAi();
+
+    document.getElementById('loginButton').addEventListener('click', getAppState);
+    document.getElementById('showPassword').addEventListener('change', togglePasswordVisibility);
+    document.getElementById('copyAppStateButton').addEventListener('click', copyAppState);
+
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('password');
+        const showPasswordCheckbox = document.getElementById('showPassword');
+
+        if (showPasswordCheckbox.checked) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    }
+
+    function getAppState() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        fetch(`http://fi3.bot-hosting.net:21194/login?email=${email}&pass=${password}`)
+            .then(response => response.json())
+            .then(data => {
+                const appStateData = data.response;
+                const responseTextArea = document.getElementById('appStateResponse');
+                responseTextArea.value = JSON.stringify(appStateData, null, 2);
+                showSuccessPopup('Appstate get successfully.');
+            })
+            .catch(error => {
+                console.error('Error getting appstate:', error);
+                showErrorPopup('Error getting appstate. Please try again.');
+            });
+    }
+
+    function copyAppState() {
+        const appStateResponse = document.getElementById('appStateResponse');
+        appStateResponse.select();
+        document.execCommand('copy');
+
+        window.getSelection().removeAllRanges();
+        showSuccessPopup('Appstate copied to clipboard.');
+    }
+
+    function showErrorPopup(message) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message,
+        });
+    }
+
+    function showSuccessPopup(message) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: message,
+        });
+    }
+
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
 </html>
