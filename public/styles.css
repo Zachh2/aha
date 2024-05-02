@@ -4,7 +4,7 @@ body {
      font-family: 'Poppins', sans-serif;
 }
  .container {
-     background-color: #000000;
+     background-color: #ffffff;
      border-radius: 10px;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
      padding: 20px;
@@ -12,10 +12,10 @@ body {
      margin-bottom: 20px;
 }
  h1 {
-     color: #ffffff;
+     color: #343a40;
 }
  label {
-     color: #ffffff;
+     color: #495057;
 }
  .centered-textarea {
      display: block;
@@ -45,9 +45,9 @@ body {
      padding: 10px;
      text-align: center;
      font-size: 16px;
-     color: #ffffff;
+     color: #555;
      margin-top: 50px;
-     border-top: 1px solid #ffffff;
+     border-top: 1px solid #ccc;
      position: fixed;
      bottom: 0;
      left: 0;
@@ -80,12 +80,12 @@ body {
   margin-top: 10px;
   padding: 14px;
   align-items: center;
-  border: 1px solid #000000;
+  border: 1px solid #ccc;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease; 
-  border-color: #000000;
-  background-color: #ffffff;
+  border-color: #ccc;
+  background-color: #fff;
 }
 
 .form-check:hover {
@@ -105,12 +105,12 @@ body {
 #inputOfPrefix, #inputOfAdmin {
   padding: 13px;
   width: 200px;
-  border: 1px solid #000000;
+  border: 1px solid #ccc;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease; 
-  border-color: #000000;
-  background-color: rgb(255, 253, 253)000;
+  border-color: #ccc;
+  background-color: #fff;
 }
 #listOfCommands, #listOfCommandsEvent, #prefixOfCommands, #adminOfCommands {
   border: none !important;
@@ -119,4 +119,3 @@ body {
 #listOfCommands:not(.modal), #listOfCommandsEvent:not(.modal), #prefixOfCommands:not(.modal), #adminOfCommands:not(.modal) {
   box-shadow: none !important;
 }
-
